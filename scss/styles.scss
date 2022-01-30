@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'base';
+@import 'classes';
 
 .container {
   display: grid;
@@ -14,6 +15,7 @@
   grid-area: picture;
   padding: 6rem;
   background: var(--background);
+  border-right: 1px solid var(--dark);
   img {
     border-radius: 50%;
   }
@@ -25,6 +27,10 @@ header {
   background: (linear-gradient(to right, var(--primary), var(--light)));
   padding: 8rem 5rem 8rem 5rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h1 {
     font-size: 6rem;
     font-weight: 400;
@@ -41,6 +47,29 @@ header {
 
 aside {
   grid-area: aside;
+  background: var(--background);
+  border-right: 1px solid var(--dark);
+  padding: 5rem 5rem 5rem 5rem;
+  .content {
+    margin: 0 0 6rem 0;
+    h3 {
+      margin: 0 0 0.8rem 0;
+    }
+    p {
+      margin: 0 0 2rem 0;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+  }
+}
+
+.stars-container {
+  display: flex;
+  margin: 2rem 0 3rem 0;
+  i {
+    font-size: 2rem;
+    margin: 0 .5rem 0 .5rem;
+  }
 }
 
 main {

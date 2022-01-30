@@ -182,6 +182,7 @@ h4,
 h5,
 h6 {
   margin: 1rem 0 2rem 0;
+  font-weight: 800;
 }
 
 a {
@@ -190,6 +191,19 @@ a {
 
 img {
   max-width: 100%;
+}
+
+.title--small {
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.text--primary {
+  color: var(--primary);
+}
+.text--hint {
+  color: var(--hint);
 }
 
 .container {
@@ -202,6 +216,7 @@ img {
   grid-area: picture;
   padding: 6rem;
   background: var(--background);
+  border-right: 1px solid var(--dark);
 }
 .picture img {
   border-radius: 50%;
@@ -213,6 +228,10 @@ header {
   background: linear-gradient(to right, var(--primary), var(--light));
   padding: 8rem 5rem 8rem 5rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 header h1 {
   font-size: 6rem;
@@ -229,6 +248,29 @@ header p {
 
 aside {
   grid-area: aside;
+  background: var(--background);
+  border-right: 1px solid var(--dark);
+  padding: 5rem 5rem 5rem 5rem;
+}
+aside .content {
+  margin: 0 0 6rem 0;
+}
+aside .content h3 {
+  margin: 0 0 0.8rem 0;
+}
+aside .content p {
+  margin: 0 0 2rem 0;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+.stars-container {
+  display: flex;
+  margin: 2rem 0 3rem 0;
+}
+.stars-container i {
+  font-size: 2rem;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 main {
