@@ -193,6 +193,14 @@ img {
   max-width: 100%;
 }
 
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
 .title--small {
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
@@ -208,7 +216,7 @@ img {
 
 .container {
   display: grid;
-  grid: "picture header" auto "aside main" 1fr/350px auto;
+  grid: "picture header" auto "aside main" 1fr "footer footer" auto/350px auto;
   height: 100vh;
 }
 
@@ -251,6 +259,7 @@ aside {
   background: var(--background);
   border-right: 1px solid var(--dark);
   padding: 5rem 5rem 5rem 5rem;
+  color: var(--hint);
 }
 aside .content {
   margin: 0 0 6rem 0;
@@ -275,6 +284,92 @@ aside .content p {
 
 main {
   grid-area: main;
+  padding: 5rem;
+  color: var(--hint);
+}
+main h2 {
+  margin-bottom: 4rem;
+}
+main p {
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+}
+main .experience {
+  display: flex;
+  margin: 6rem 0;
+}
+main .experience .timeline {
+  text-align: center;
+  color: var(--dark);
+  padding-right: 2rem;
+  border-right: 1px solid var(--border);
+}
+main .experience .timeline p {
+  margin: 0;
+}
+main .content {
+  padding: 0 1rem;
+}
+main .content h3 {
+  margin: 0;
+  color: var(--hint);
+}
+main .content p {
+  margin: 0;
+}
+main .content ul {
+  margin: 2rem 0;
+  list-style: circle;
+  padding-left: 4rem;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--background);
+  padding: 5rem 5rem 5rem 5rem;
+  background-color: var(--text);
+}
+footer h2 {
+  margin: 0 0 4rem 0;
+}
+footer form {
+  display: flex;
+  align-items: center;
+}
+footer form .email {
+  background: linear-gradient(to right, var(--light), var(--dark));
+  padding: 1rem 2rem 1rem 2rem;
+  color: var(--text);
+  font-size: 2rem;
+}
+footer form button {
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+footer form button:hover {
+  opacity: 0.8;
+}
+footer form button .send {
+  background: var(--primary);
+  padding: 0.9rem 2rem 0.9rem 2rem;
+  color: var(--hint);
+  font-size: 2rem;
+}
+footer form input {
+  outline: none;
+  border: none;
+  padding: 1rem 2rem 1rem 2rem;
+  min-width: 400px;
+  line-height: 2rem;
+}
+footer form input::placeholder {
+  color: var(--hint);
 }
 
 /*# sourceMappingURL=styles.css.map */
