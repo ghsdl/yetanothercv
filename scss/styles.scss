@@ -2,6 +2,7 @@
 @import 'base';
 @import 'utils';
 @import 'classes';
+@import 'animations';
 
 .container {
   display: grid;
@@ -17,7 +18,7 @@
   grid-area: picture;
   padding: 6rem;
   background: var(--background);
-  border-right: 1px solid var(--dark);
+  border-right: 1px solid var(--border);
   img {
     border-radius: 50%;
   }
@@ -38,21 +39,34 @@ header {
     font-weight: 400;
     line-height: 8rem;
     letter-spacing: 3rem;
+    i {
+      animation: bounce 0.8s;
+      animation-direction: alternate;
+      animation-iteration-count: 4;
+      color: var(--dark);
+    }
   }
   p {
     font-size: 2rem;
     font-weight: 300;
     line-height: 3rem;
     letter-spacing: 0.5rem;
+    i {
+      margin: 0 2rem 0 2rem;
+      color: var(--dark);
+    }
   }
 }
 
 aside {
   grid-area: aside;
   background: var(--background);
-  border-right: 1px solid var(--dark);
+  border-right: 1px solid var(--border);
   padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+  h2 {
+    margin: 0 0 4rem 0;
+  }
   .content {
     margin: 0 0 6rem 0;
     h3 {
@@ -80,7 +94,7 @@ main {
   padding: 5rem;
   color: var(--hint);
   h2 {
-    margin-bottom: 4rem;
+    margin: 0 0 4rem 0;
   }
   p {
     letter-spacing: 0.1rem;
@@ -147,7 +161,7 @@ footer {
       }
       .send {
         background: var(--primary);
-        padding: .9rem 2rem .9rem 2rem;
+        padding: 0.9rem 2rem 0.9rem 2rem;
         color: var(--hint);
         font-size: 2rem;
       }

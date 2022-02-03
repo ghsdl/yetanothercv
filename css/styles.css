@@ -214,6 +214,41 @@ img {
   color: var(--hint);
 }
 
+.link {
+  position: relative;
+  white-space: nowrap;
+}
+.link:before, .link:after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--dark);
+  top: 140%;
+  left: 0;
+  pointer-events: none;
+}
+.link:before {
+  content: "";
+}
+
+.link-underline:before {
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+.link-underline:hover:before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
 .container {
   display: grid;
   grid: "picture header" auto "aside main" 1fr "footer footer" auto/350px auto;
@@ -224,7 +259,7 @@ img {
   grid-area: picture;
   padding: 6rem;
   background: var(--background);
-  border-right: 1px solid var(--dark);
+  border-right: 1px solid var(--border);
 }
 .picture img {
   border-radius: 50%;
@@ -247,19 +282,32 @@ header h1 {
   line-height: 8rem;
   letter-spacing: 3rem;
 }
+header h1 i {
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: 4;
+  color: var(--dark);
+}
 header p {
   font-size: 2rem;
   font-weight: 300;
   line-height: 3rem;
   letter-spacing: 0.5rem;
 }
+header p i {
+  margin: 0 2rem 0 2rem;
+  color: var(--dark);
+}
 
 aside {
   grid-area: aside;
   background: var(--background);
-  border-right: 1px solid var(--dark);
+  border-right: 1px solid var(--border);
   padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+}
+aside h2 {
+  margin: 0 0 4rem 0;
 }
 aside .content {
   margin: 0 0 6rem 0;
@@ -288,7 +336,7 @@ main {
   color: var(--hint);
 }
 main h2 {
-  margin-bottom: 4rem;
+  margin: 0 0 4rem 0;
 }
 main p {
   letter-spacing: 0.1rem;
