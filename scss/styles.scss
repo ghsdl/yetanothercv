@@ -3,6 +3,7 @@
 @import 'utils';
 @import 'classes';
 @import 'animations';
+@import 'responsive';
 
 .container {
   display: grid;
@@ -11,14 +12,25 @@
     'aside main' 1fr
     'footer footer' auto
     / 350px auto;
-  height: 100vh;
+  @include xs {
+    grid:
+      'header' auto
+      'main' auto
+      'picture' auto
+      'aside' auto
+      'footer' auto
+      / auto;
+  }
 }
 
 .picture {
   grid-area: picture;
-  padding: 6rem;
+  padding: 6rem 6rem 6rem 6rem;
   background: var(--background);
   border-right: 1px solid var(--border);
+  @include xs {
+    padding: 3rem 3rem 3rem 3rem;
+  }
   img {
     border-radius: 50%;
   }
@@ -26,23 +38,29 @@
 
 header {
   grid-area: header;
-  text-align: center;
   background: (linear-gradient(to right, var(--primary), var(--light)));
   padding: 8rem 5rem 8rem 5rem;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  @include xs {
+    padding: 4rem 4rem 4rem 4rem;
+    text-align: center;
+  }
   h1 {
     font-size: 6rem;
     font-weight: 400;
     line-height: 8rem;
     letter-spacing: 3rem;
+    @include xs {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
     i {
       animation: bounce 0.8s;
       animation-direction: alternate;
-      animation-iteration-count: 4;
+      animation-iteration-count: 2;
       color: var(--dark);
     }
   }
@@ -51,6 +69,9 @@ header {
     font-weight: 300;
     line-height: 3rem;
     letter-spacing: 0.5rem;
+    @include xs {
+      display: none;
+    }
     i {
       margin: 0 2rem 0 2rem;
       color: var(--dark);
@@ -64,6 +85,9 @@ aside {
   border-right: 1px solid var(--border);
   padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+  @include xs {
+    padding: 2rem 2rem 2rem 2rem;
+  }
   h2 {
     margin: 0 0 4rem 0;
   }
@@ -91,8 +115,11 @@ aside {
 
 main {
   grid-area: main;
-  padding: 5rem;
+  padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+  @include xs {
+    padding: 4rem 2rem 4rem 2rem;
+  }
   h2 {
     margin: 0 0 4rem 0;
   }
@@ -139,8 +166,14 @@ footer {
   color: var(--background);
   padding: 5rem 5rem 5rem 5rem;
   background-color: var(--text);
+  @include xs {
+    padding: 2rem 2rem 2rem 2rem;
+  }
   h2 {
     margin: 0 0 4rem 0;
+    @include xs {
+      margin: 0 0 2rem 0;
+    }
   }
   form {
     display: flex;
@@ -172,6 +205,9 @@ footer {
       padding: 1rem 2rem 1rem 2rem;
       min-width: 400px;
       line-height: 2rem;
+      @include xs {
+        min-width: 100px;
+      }
       &::placeholder {
         color: var(--hint);
       }

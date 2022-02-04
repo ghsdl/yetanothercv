@@ -249,17 +249,30 @@ img {
     transform: translateY(-50px);
   }
 }
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* Large desktop */
 .container {
   display: grid;
   grid: "picture header" auto "aside main" 1fr "footer footer" auto/350px auto;
-  height: 100vh;
+}
+@media (max-width: 480px) {
+  .container {
+    grid: "header" auto "main" auto "picture" auto "aside" auto "footer" auto/auto;
+  }
 }
 
 .picture {
   grid-area: picture;
-  padding: 6rem;
+  padding: 6rem 6rem 6rem 6rem;
   background: var(--background);
   border-right: 1px solid var(--border);
+}
+@media (max-width: 480px) {
+  .picture {
+    padding: 3rem 3rem 3rem 3rem;
+  }
 }
 .picture img {
   border-radius: 50%;
@@ -267,14 +280,18 @@ img {
 
 header {
   grid-area: header;
-  text-align: center;
   background: linear-gradient(to right, var(--primary), var(--light));
   padding: 8rem 5rem 8rem 5rem;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+@media (max-width: 480px) {
+  header {
+    padding: 4rem 4rem 4rem 4rem;
+    text-align: center;
+  }
 }
 header h1 {
   font-size: 6rem;
@@ -282,10 +299,16 @@ header h1 {
   line-height: 8rem;
   letter-spacing: 3rem;
 }
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
 header h1 i {
   animation: bounce 0.8s;
   animation-direction: alternate;
-  animation-iteration-count: 4;
+  animation-iteration-count: 2;
   color: var(--dark);
 }
 header p {
@@ -293,6 +316,11 @@ header p {
   font-weight: 300;
   line-height: 3rem;
   letter-spacing: 0.5rem;
+}
+@media (max-width: 480px) {
+  header p {
+    display: none;
+  }
 }
 header p i {
   margin: 0 2rem 0 2rem;
@@ -305,6 +333,11 @@ aside {
   border-right: 1px solid var(--border);
   padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+}
+@media (max-width: 480px) {
+  aside {
+    padding: 2rem 2rem 2rem 2rem;
+  }
 }
 aside h2 {
   margin: 0 0 4rem 0;
@@ -332,8 +365,13 @@ aside .content p {
 
 main {
   grid-area: main;
-  padding: 5rem;
+  padding: 5rem 5rem 5rem 5rem;
   color: var(--hint);
+}
+@media (max-width: 480px) {
+  main {
+    padding: 4rem 2rem 4rem 2rem;
+  }
 }
 main h2 {
   margin: 0 0 4rem 0;
@@ -381,8 +419,18 @@ footer {
   padding: 5rem 5rem 5rem 5rem;
   background-color: var(--text);
 }
+@media (max-width: 480px) {
+  footer {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
 footer h2 {
   margin: 0 0 4rem 0;
+}
+@media (max-width: 480px) {
+  footer h2 {
+    margin: 0 0 2rem 0;
+  }
 }
 footer form {
   display: flex;
@@ -415,6 +463,11 @@ footer form input {
   padding: 1rem 2rem 1rem 2rem;
   min-width: 400px;
   line-height: 2rem;
+}
+@media (max-width: 480px) {
+  footer form input {
+    min-width: 100px;
+  }
 }
 footer form input::placeholder {
   color: var(--hint);
